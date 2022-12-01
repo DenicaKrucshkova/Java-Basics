@@ -1,0 +1,41 @@
+package ispitniZasachi;
+
+import java.util.Scanner;
+
+public class BarcodeGenerator {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        int startNumber = Integer.parseInt(scanner.nextLine());
+        int startUnits = startNumber % 10;
+        int startTens = startNumber / 10 % 10;
+        int startHundreds = startNumber / 100 % 10;
+        int startThousands = startNumber / 1000;
+
+        int endNumber = Integer.parseInt(scanner.nextLine());
+        int endUnits = endNumber % 10;
+        int endTens = endNumber / 10 % 10;
+        int endHundreds = endNumber / 100 % 10;
+        int endThousand = endNumber / 1000;
+        for (int number = startNumber; number <=endNumber; number++) {
+
+            int units = number % 10;
+            int tens = number / 10 % 10;
+            int hundreds = number / 100 % 10;
+            int thousands = number / 1000;
+
+            boolean isValidUnits = units >= startUnits && units <= endUnits && units % 2 != 0;
+            boolean isValidTens = tens >= startTens && tens <= endTens && tens % 2 != 0;
+            boolean isValidHundreds = hundreds >= startHundreds && hundreds <= endHundreds && hundreds % 2 != 0;
+            boolean isValidThousands = thousands >= startThousands && thousands <= endThousand && thousands % 2 != 0;
+
+            if (isValidUnits && isValidTens && isValidHundreds && isValidThousands) {
+                System.out.print(number + " ");
+
+            }
+
+
+        }
+
+
+    }
