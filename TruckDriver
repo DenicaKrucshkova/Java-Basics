@@ -1,0 +1,72 @@
+package oprajneniq;
+
+import java.util.Scanner;
+
+public class TruckDriver {
+    public static void main(String[] args) {
+        Scanner scanner=new Scanner(System.in);
+        String season = scanner.nextLine();
+        double kilometersForMonth = Double.parseDouble(scanner.nextLine());
+        var salary = 0.00;
+        var afterTaxes = (salary * 10) / 100;
+
+        if (season.equals("Spring")  || season.equals("Autumn") )
+        {
+            if (kilometersForMonth <= 5000)
+            {
+                kilometersForMonth = 0.75;
+                salary = (4 * kilometersForMonth) - afterTaxes;
+            }
+            else if (kilometersForMonth > 5000 && kilometersForMonth <= 10000)
+            {
+                kilometersForMonth = 0.95;
+                salary = (4 * kilometersForMonth) - afterTaxes;
+            }
+            else if (kilometersForMonth > 10000 && kilometersForMonth <= 20000)
+            {
+                kilometersForMonth *= 1.45;
+                salary = (4 * kilometersForMonth) - afterTaxes;
+            }
+        }
+        if (season.equals("Summer") )
+        {
+            if (kilometersForMonth <= 5000)
+            {
+                kilometersForMonth *= 0.90;
+                salary = (4 * kilometersForMonth) - afterTaxes;
+            }
+            else if (kilometersForMonth > 5000 && kilometersForMonth <= 10000)
+            {
+                kilometersForMonth *= 1.10;
+                salary = (kilometersForMonth * 4) - afterTaxes;
+            }
+            else if (kilometersForMonth > 10000 && kilometersForMonth <= 20000)
+            {
+                kilometersForMonth *= 1.45;
+                salary = (kilometersForMonth * 4) - afterTaxes;
+            }
+        }
+        if (season.equals("Winter") )
+        {
+            if (kilometersForMonth <= 5000)
+            {
+                kilometersForMonth = 1.05;
+                salary += (kilometersForMonth * 4) - afterTaxes;
+
+            }
+            else if (kilometersForMonth > 5000 && kilometersForMonth <= 10000)
+            {
+                kilometersForMonth = 1.25;
+                salary = (kilometersForMonth * 4) - afterTaxes;
+            }
+            else if (kilometersForMonth > 10000 && kilometersForMonth <= 20000)
+            {
+                kilometersForMonth = 1.45;
+                salary = (kilometersForMonth * 4) - afterTaxes;
+            }
+
+        }
+        System.out.printf("%.2f", salary);
+    }
+
+    }
