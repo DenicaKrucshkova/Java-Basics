@@ -1,0 +1,15 @@
+ackage oprajneniq;
+
+import java.util.Scanner;
+
+public class TriangleArea {
+    public static void main(String[] args) {
+        Scanner scanner=new Scanner(System.in);
+
+        int height=Integer.parseInt(scanner.nextLine());
+        double country=Double.parseDouble(scanner.nextLine());
+
+        double result=country*height/2.0;
+        System.out.printf("%.2f",result);
+
+    }
