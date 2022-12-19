@@ -1,0 +1,25 @@
+package oprajneniq;
+
+import java.util.Scanner;
+
+public class Skeleton {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int recordMinutes = Integer.parseInt(scanner.nextLine());
+        int recordSeconds = Integer.parseInt(scanner.nextLine());
+        double distanceInMeters = Double.parseDouble(scanner.nextLine());
+        int secondsPerHundredMetres = Integer.parseInt(scanner.nextLine());
+
+        int recordInSeconds = recordMinutes * 60 + recordSeconds;
+        double additionSeconds = (distanceInMeters / 120) * 2.5;
+
+        double time = (distanceInMeters / 100) * secondsPerHundredMetres - additionSeconds;
+
+        if (time > recordInSeconds) {
+            System.out.printf("No, Marin failed! He was %.3f second slower.", time - recordInSeconds);
+        } else {
+            System.out.println("Marin Bangiev won an Olympic quota!");
+            System.out.printf("His time is %.3f.", time);
+        }
+    }
+}
