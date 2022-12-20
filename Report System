@@ -1,0 +1,56 @@
+package oprajneniq;
+
+import java.util.Scanner;
+
+public class ReportSystem {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int neededMoney = Integer.parseInt(scanner.nextLine());
+
+        int cashCounter = 0;
+        int cardCounter = 0;
+        int paymentCounter = 0;
+
+        double payCash = 0;
+        double payCard = 0;
+
+        while (neededMoney > 0) {
+            String input = scanner.nextLine();
+            if (input.equals("End")) {
+                System.out.println("Failed to collect required money for charity.");
+                return;
+            } else {
+                int money = Integer.parseInt(input);
+                paymentCounter++;
+                if (paymentCounter % 2 == 1) {
+                    if (money >= 100) {
+                        System.out.println("Error in transaction!");
+                        continue;
+                    }
+                    cashCounter++;
+                    payCash += money;
+                    neededMoney -= money;
+                    System.out.println("Product sold!");
+                } else {
+                    if (money < 10) {
+                        System.out.println("Error in transaction!");
+                        continue;
+                    }
+                    cardCounter++;
+                    payCard += money;
+                    neededMoney -= money;
+                    System.out.println("Product sold!");
+
+                }
+            }
+
+        }
+        double averageCash = payCash / cashCounter;
+        double averageCard = payCard / cardCounter;
+
+        System.out.printf("Average CS: %.2f%n", averageCash);
+        System.out.printf("Average CC: %.2f%n", averageCard);
+
+    }
+}
+
