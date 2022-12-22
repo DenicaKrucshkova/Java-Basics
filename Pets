@@ -1,0 +1,40 @@
+package oprajneniq;
+
+import java.util.Scanner;
+
+public class Pets {
+    public static void main(String[] args) {
+
+        Scanner scanner = new Scanner(System.in);
+
+        int days = Integer.parseInt(scanner.nextLine());
+        double foodKg = Double.parseDouble(scanner.nextLine());
+        double foodKgDog = Double.parseDouble(scanner.nextLine());
+        double foodKgCat = Double.parseDouble(scanner.nextLine());
+        double foodKgTurtle = Double.parseDouble(scanner.nextLine());
+
+        double foodDog = days * foodKgDog;
+        double foodCat = days * foodKgCat;
+        double foodTurtle =foodKgTurtle/1000*days;
+
+
+        double total = foodDog + foodCat + foodTurtle;
+
+        if (total <=foodKg) {
+            double t = foodKg - total;
+            System.out.printf("%d kilos of food left.", (int)Math.floor(t));
+        }
+
+
+        if (total > foodKg) {
+            double t=total -foodKg;
+            System.out.printf("%d more kilos of food are needed.",(int)Math.ceil(t));
+
+        }
+
+
+
+    }
+
+
+}
