@@ -1,0 +1,44 @@
+package oprajneniq;
+
+import java.util.Scanner;
+
+public class BikeRace {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int countJuniors = Integer.parseInt(scanner.nextLine());
+        int countSeniors = Integer.parseInt(scanner.nextLine());
+        String trace = scanner.nextLine();
+
+        var totalPlayers = countJuniors + countSeniors;
+        double costs = 0;
+
+        double totalSum = 0;
+
+        if (trace.equals("trail")) {
+            totalSum = (5.50 * countJuniors) + (7 * countSeniors);
+            costs = totalSum - ((5 * totalSum) / 100);
+
+        } else if (trace.equals("cross-country")) {
+            totalSum = (8 * countJuniors) + (9.50 * countSeniors);
+            costs = totalSum - ((5 * totalSum) / 100);
+
+            if (totalPlayers >= 50) {
+                totalSum = totalSum - ((25 * totalSum) / 100);
+                costs = totalSum - ((5 * totalSum) / 100);
+            }
+
+        } else if (trace.equals("downhill")) {
+            totalSum = (12.25 * countJuniors) + (13.75 * countSeniors);
+            costs = totalSum - ((5 * totalSum) / 100);
+
+        } else if (trace.equals("road")) {
+            totalSum = (20 * countJuniors) + (21.50 * countSeniors);
+            costs = totalSum - ((5 * totalSum) / 100);
+
+        }
+
+        System.out.printf("%.2f", costs);
+
+    }
+}
+
