@@ -1,0 +1,21 @@
+package oprajneniq;
+
+import java.util.Scanner;
+
+public class AverageNumber {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        double n = Double.parseDouble(scanner.nextLine());
+        double sum = Double.parseDouble(scanner.nextLine());
+        while (sum > n) {
+            int currentNum = Integer.parseInt(scanner.nextLine());
+            sum = sum / n;
+
+
+        }
+        System.out.printf("%.2f", sum);
+
+
+    }
+}
