@@ -1,0 +1,14 @@
+package oprajneniq;
+
+import java.util.Scanner;
+
+public class CelsiusToFahrenheit {
+    public static void main(String[] args) {
+        Scanner scanner=new Scanner(System.in);
+
+        double degreeC=Double.parseDouble(scanner.nextLine());
+        double degreeF=Double.parseDouble(scanner.nextLine());
+
+        double result=degreeC*1.8+32;
+        System.out.printf("%.2f",degreeC);
+    }
