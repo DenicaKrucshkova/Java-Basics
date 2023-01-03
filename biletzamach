@@ -1,0 +1,50 @@
+package oprajneniq;
+
+import java.util.Scanner;
+
+public class biletzamach {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        double budget = Double.parseDouble(scanner.nextLine());
+        String input = scanner.nextLine();
+        int groupOfPeople = Integer.parseInt(scanner.nextLine());
+        double vipResult = 499.99;
+        double normalResult = 249.99;
+        double test = 0;
+        if (groupOfPeople >= 1 && groupOfPeople <= 4) {
+            test = budget * 25 / 100;
+            budget -= test;
+
+        } else if (groupOfPeople >= 5 && groupOfPeople <= 9) {
+            test = budget * 40 / 100;
+            budget -= test;
+
+        } else if (groupOfPeople >= 10 && groupOfPeople <= 24) {
+            test = budget * 50 / 100;
+            budget -= test;
+
+        } else if (groupOfPeople >= 25 && groupOfPeople <= 49) {
+            test = budget * 60 / 100;
+            budget -= test;
+
+        } else if (groupOfPeople >= 50) {
+            test =
+                    budget * 70 / 100;
+            budget -= test;
+
+        }
+        if (input == "Vip") {
+            vipResult *= groupOfPeople;
+            if (vipResult < test) {
+                System.out.printf("Yes! You have %.2f leva left.", test - normalResult);
+            } else {
+                System.out.printf("Not enough money! You need %.2f leva.", vipResult - test);
+            }
+        } else if (input == "Normal") {
+            normalResult *= groupOfPeople;
+            if (normalResult < test) {
+                System.out.printf("Yes! You have %.2f leva left.", test - normalResult);
+            } else {
+                System.out.printf("Not enough money! You need %.2f leva.", normalResult = test);
+
+            }
