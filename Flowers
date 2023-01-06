@@ -1,0 +1,52 @@
+package oprajneniq;
+
+import java.util.Scanner;
+
+public class Flowers {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int hrizantemi = Integer.parseInt(scanner.nextLine());
+        int roses = Integer.parseInt(scanner.nextLine());
+        int tulips = Integer.parseInt(scanner.nextLine());
+        String season = scanner.nextLine();
+        String holiday = scanner.nextLine();
+        double totalPrice = 0;
+        double totalFlowers = hrizantemi + roses + tulips;
+
+        if (season.equals("spring") || season.equals ("summer")) {
+            double priceHrizantemi = hrizantemi * 2.00;
+            double priceRoses = roses * 4.10;
+            double priceTulips = tulips * 2.50;
+            totalPrice=priceHrizantemi+priceRoses+priceTulips;
+            if (holiday.equals ("Y") ){
+                totalPrice = totalPrice* 1.15;
+            } else {
+                totalPrice = totalFlowers;
+            }
+            if (tulips > 7) {
+                totalPrice =totalPrice* 0.95;
+            }
+
+        }
+        if (season.equals("Autumn")||season.equals("winter")) {
+            totalPrice = totalPrice*0.90;
+
+        } else {
+            double priceHrizantems = hrizantemi * 3.75;
+            double priceRozes = roses * 4.50;
+            double priceTulips = tulips * 4.15;
+            totalPrice=priceHrizantems+priceRozes+priceTulips;
+            if (holiday.equals("N")) {
+                totalPrice = totalPrice* 1.15;
+            } else {
+                totalPrice = priceHrizantems + priceRozes + priceTulips;
+            }
+        }
+        if (totalFlowers > 20) {
+            totalPrice =totalPrice* 0.80;
+        }
+
+        double arranging = totalPrice + 2.00;
+        System.out.printf("%.2f ",arranging);
+    }
+}
