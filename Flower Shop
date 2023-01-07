@@ -1,0 +1,41 @@
+package oprajneniq;
+
+import java.util.Scanner;
+
+public class FlowerShop {
+    public static void main(String[] args) {
+        Scanner scanner=new Scanner(System.in);
+
+
+        int magnolia =Integer.parseInt(scanner.nextLine());
+        int hyacinth = Integer.parseInt(scanner.nextLine());
+        int rose =  Integer.parseInt(scanner.nextLine());
+        int cactus =Integer.parseInt(scanner.nextLine());
+        double presantPrice=Double.parseDouble(scanner.nextLine());
+
+             double magnoliaPrice = 3.25;
+             double hyacinthPrice = 4.00;
+             double rosePrice = 3.50;
+             double cactusPrice = 8.00;
+
+        double profit = (magnolia * magnoliaPrice + hyacinth * hyacinthPrice +
+                rose * rosePrice + cactus * cactusPrice) * 0.95;  // 5% taxes
+
+        double diff = presantPrice - profit;
+
+        if (diff > 0)
+        {diff = Math.ceil(diff);
+
+            System.out.printf("She will have to borrow %.0f leva.",diff);
+        }
+        else
+        {
+            diff = Math.abs(diff);
+            diff = Math.floor(diff);
+
+            System.out.printf("She is left with %.0f leva.",diff);
+
+        }
+
+    }
+}
