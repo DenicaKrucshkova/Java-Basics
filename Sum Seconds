@@ -1,0 +1,32 @@
+package ConditionalStatements.exsersais;
+
+import java.util.Scanner;
+
+public class SumSeconds_1 {
+    public static void main(String[] args) {
+        Scanner scanner=new Scanner(System.in);
+
+        //namirame trite vremena na sportistite
+        //sumorame vremeto im v sekundi
+        //namirame min.i sek. ot sumarnoto vreme v sek.
+        //otpechatvame sek.-min.
+
+        int first=Integer.parseInt(scanner.nextLine());
+        int second=Integer.parseInt(scanner.nextLine());
+        int third=Integer.parseInt(scanner.nextLine());
+
+        int sum=first+second+third;
+        int min=sum/60;
+        int sek=sum%60;
+
+        if (sek<10) {
+            System.out.printf("%d:0%d", min, sek);
+        }else {
+            System.out.printf("%d:%d",min,sek);}
+
+            
+        }
+
+
+    }
+
