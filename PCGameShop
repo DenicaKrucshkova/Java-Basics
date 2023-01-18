@@ -1,0 +1,40 @@
+package oprajneniq;
+
+import java.util.Scanner;
+
+public class PCGameShop {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        int n = Integer.parseInt(scanner.nextLine());
+
+        int hearhstoneCnt = 0;
+        int forniteCnt = 0;
+        int overwatchCnt = 0;
+        int otherGamesCnt = 0;
+
+        for (int i = 0; i < n; i++) {
+            String game = scanner.nextLine();
+            switch (game) {
+                case "Hearthstone":
+                    hearhstoneCnt++;
+                    break;
+                case "Fornite":
+                    forniteCnt++;
+                    break;
+                case "Overwatch":
+                    overwatchCnt++;
+                    break;
+                default:
+                    otherGamesCnt++;
+                    break;
+            }
+        }
+
+        System.out.printf("Hearthstone - %.2f%%%n", hearhstoneCnt * 1.0 / n * 100);
+        System.out.printf("Fornite - %.2f%%%n", forniteCnt * 1.0 / n * 100);
+        System.out.printf("Overwatch - %.2f%%%n", overwatchCnt * 1.0 / n * 100);
+        System.out.printf("Others - %.2f%%%n", otherGamesCnt * 1.0 / n * 100);
+
+    }
+}
